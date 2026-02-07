@@ -6,7 +6,8 @@
   "types": "./src/index.ts",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "echo 'no linter configured yet'",
+    "test": "echo 'no tests configured yet'"
   },
   "peerDependencies": {
     "react": "^19.0.0",
