@@ -34,5 +34,3 @@ coverage/
 
 # Prettier
 .prettiercache
-
-/pnpm-lock.yaml
