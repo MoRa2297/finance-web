@@ -34,3 +34,6 @@ coverage/
 
 # Prettier
 .prettiercache
+
+# Storybook
+storybook-static/
