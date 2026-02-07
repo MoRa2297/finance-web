@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "./Button.types";
+import type { ButtonProps } from "./Button.types";
 
 const variantStyles: Record<string, string> = {
   primary: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800",

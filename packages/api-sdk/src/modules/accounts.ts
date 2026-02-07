@@ -1,5 +1,5 @@
-import { ApiClient } from "../client";
-import { Account, CreateAccountDto, UpdateAccountDto } from "../types";
+import type { ApiClient } from "../client";
+import type { Account, CreateAccountDto, UpdateAccountDto } from "../types";
 
 export class AccountsModule {
   constructor(private client: ApiClient) {}

@@ -1,10 +1,9 @@
 import { Button } from "@finance/ui";
-import { financeApi } from "@/lib/api";
 
 export default function HomePage() {
   // Solo per verificare che l'SDK è importabile senza errori
-  console.log("API SDK initialized:", !!financeApi);
-  console.log("Accounts module:", !!financeApi.accounts);
+  // console.log("API SDK initialized:", !!financeApi);
+  // console.log("Accounts module:", !!financeApi.accounts);
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-950">

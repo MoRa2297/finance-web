@@ -1,4 +1,5 @@
-import { ApiClient, ApiClientConfig } from "./client";
+import type { ApiClientConfig } from "./client";
+import { ApiClient } from "./client";
 import { AccountsModule } from "./modules/accounts";
 
 export class FinanceApi {
