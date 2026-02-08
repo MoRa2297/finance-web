@@ -47,7 +47,7 @@ describe("Button", () => {
     expect(spinner?.className).toContain("animate-spin");
   });
 
-  it("applies fullWidth class", () => {
+  it("applies fullWidth variant", () => {
     render(<Button fullWidth>Full</Button>);
     const button = screen.getByRole("button");
     expect(button.className).toContain("w-full");
