@@ -3,35 +3,15 @@
 import { forwardRef } from "react";
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import { X } from "lucide-react";
-import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import type { VariantProps } from "class-variance-authority";
-
-const toastVariants = cva(
-  "group pointer-events-auto relative flex w-full items-center justify-between gap-4 overflow-hidden rounded-lg border p-4 shadow-lg transition-all",
-  {
-    variants: {
-      variant: {
-        default: "border-gray-700 bg-gray-900 text-white",
-        success: "border-green-800 bg-green-950 text-green-300",
-        error: "border-red-800 bg-red-950 text-red-300",
-        warning: "border-yellow-800 bg-yellow-950 text-yellow-300",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  },
-);
-
-type ViewportProps = React.ComponentPropsWithoutRef<
-  typeof ToastPrimitive.Viewport
->;
-type CloseProps = React.ComponentPropsWithoutRef<typeof ToastPrimitive.Close>;
-type TitleProps = React.ComponentPropsWithoutRef<typeof ToastPrimitive.Title>;
-type DescriptionProps = React.ComponentPropsWithoutRef<
-  typeof ToastPrimitive.Description
->;
+import { toastVariants } from "./Toast.variants";
+import type {
+  ViewportProps,
+  DescriptionProps,
+  CloseProps,
+  TitleProps,
+  ToastProps,
+} from "./Toast.types";
 
 export const ToastProvider = ToastPrimitive.Provider;
 
@@ -49,11 +29,6 @@ export const ToastViewport = forwardRef<HTMLOListElement, ViewportProps>(
 );
 
 ToastViewport.displayName = "ToastViewport";
-
-export interface ToastProps
-  extends
-    React.ComponentPropsWithoutRef<typeof ToastPrimitive.Root>,
-    VariantProps<typeof toastVariants> {}
 
 export const Toast = forwardRef<HTMLLIElement, ToastProps>(
   ({ className, variant, ...rest }, ref) => (

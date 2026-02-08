@@ -4,19 +4,17 @@ import { forwardRef } from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { ChevronDown, Check } from "lucide-react";
 import { cn } from "../../lib/utils";
-
-type TriggerProps = React.ComponentPropsWithoutRef<
-  typeof SelectPrimitive.Trigger
->;
-type ContentProps = React.ComponentPropsWithoutRef<
-  typeof SelectPrimitive.Content
->;
-type ItemProps = React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>;
+import type {
+  SelectTriggerProps,
+  SelectContentProps,
+  SelectItemProps,
+} from "./Select.types";
 
 export const Select = SelectPrimitive.Root;
 export const SelectValue = SelectPrimitive.Value;
+export const SelectGroup = SelectPrimitive.Group;
 
-export const SelectTrigger = forwardRef<HTMLButtonElement, TriggerProps>(
+export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
   ({ className, children, ...rest }, ref) => (
     <SelectPrimitive.Trigger
       ref={ref}
@@ -38,7 +36,7 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, TriggerProps>(
 
 SelectTrigger.displayName = "SelectTrigger";
 
-export const SelectContent = forwardRef<HTMLDivElement, ContentProps>(
+export const SelectContent = forwardRef<HTMLDivElement, SelectContentProps>(
   ({ className, children, position = "popper", ...rest }, ref) => (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -70,7 +68,7 @@ export const SelectContent = forwardRef<HTMLDivElement, ContentProps>(
 
 SelectContent.displayName = "SelectContent";
 
-export const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
+export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>(
   ({ className, children, ...rest }, ref) => (
     <SelectPrimitive.Item
       ref={ref}

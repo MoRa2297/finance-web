@@ -5,12 +5,6 @@ export { Input } from "./components/Input";
 export type { InputProps } from "./components/Input";
 
 export { Card, CardHeader, CardContent, CardFooter } from "./components/Card";
-export type {
-  CardProps,
-  CardHeaderProps,
-  CardContentProps,
-  CardFooterProps,
-} from "./components/Card";
 
 export { Badge, badgeVariants } from "./components/Badge";
 export type { BadgeProps } from "./components/Badge";
@@ -32,6 +26,7 @@ export {
   SelectContent,
   SelectItem,
   SelectValue,
+  SelectGroup,
 } from "./components/Select";
 
 export {
