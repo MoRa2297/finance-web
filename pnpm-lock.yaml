@@ -142,6 +142,9 @@ importers:
       '@storybook/react-vite':
         specifier: ^8.5.0
         version: 8.6.15(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.1)(storybook@8.6.15(prettier@3.8.1))(typescript@5.9.3)(vite@5.4.21(@types/node@22.19.9)(lightningcss@1.30.2))
+      '@tailwindcss/postcss':
+        specifier: ^4.0.0
+        version: 4.1.18
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.13
@@ -157,6 +160,9 @@ importers:
       storybook:
         specifier: ^8.5.0
         version: 8.6.15(prettier@3.8.1)
+      tailwindcss:
+        specifier: ^4.0.0
+        version: 4.1.18
       typescript:
         specifier: ^5.7.0
         version: 5.9.3
