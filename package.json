@@ -7,7 +7,8 @@
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "turbo test",
-    "type-check": "turbo type-check"
+    "type-check": "turbo type-check",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
@@ -26,6 +27,17 @@
     "turbo": "^2.3.0",
     "typescript": "^5.7.0",
     "vitest": "^2.1.0",
-    "jsdom": "^25.0.0"
+    "jsdom": "^25.0.0",
+    "husky": "^9.1.0",
+    "lint-staged": "^15.3.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,yaml,yml,mjs}": [
+      "prettier --write"
+    ]
   }
 }

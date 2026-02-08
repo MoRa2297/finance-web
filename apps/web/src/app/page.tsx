@@ -5,6 +5,8 @@ export default function HomePage() {
   // console.log("API SDK initialized:", !!financeApi);
   // console.log("Accounts module:", !!financeApi.accounts);
 
+  console.log("test"); // questa riga
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-950">
       <div className="text-center">
