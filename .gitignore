@@ -35,4 +35,5 @@ coverage/
 # Prettier
 .prettiercache
 
-/pnpm-lock.yaml
+# Storybook
+storybook-static/

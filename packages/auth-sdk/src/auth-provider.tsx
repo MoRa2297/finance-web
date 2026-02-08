@@ -8,8 +8,9 @@ import {
   useMemo,
   useState,
 } from "react";
-import { AuthClient } from "./auth-client";
-import { AuthState, LoginCredentials, RegisterData, User } from "./types";
+import type { ReactNode } from "react";
+import type { AuthClient } from "./auth-client";
+import type { AuthState, LoginCredentials, RegisterData, User } from "./types";
 
 interface AuthContextValue extends AuthState {
   login: (credentials: LoginCredentials) => Promise<void>;
@@ -20,7 +21,7 @@ interface AuthContextValue extends AuthState {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 interface AuthProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   authClient: AuthClient;
   onTokensReceived: (accessToken: string, refreshToken: string) => void;
   onTokensCleared: () => void;

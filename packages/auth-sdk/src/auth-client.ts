@@ -1,5 +1,5 @@
-import { ApiClient } from "@finance/api-sdk";
-import { AuthTokens, LoginCredentials, RegisterData, User } from "./types";
+import type { ApiClient } from "@finance/api-sdk";
+import type { AuthTokens, LoginCredentials, RegisterData, User } from "./types";
 
 export class AuthClient {
   constructor(private apiClient: ApiClient) {}
