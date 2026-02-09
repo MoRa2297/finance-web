@@ -39,6 +39,15 @@ export {
 } from "./components/Toast";
 export type { ToastProps } from "./components/Toast";
 
+export {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarItem,
+} from "./components/Sidebar";
+export type { SidebarProps, SidebarItemProps } from "./components/Sidebar";
+
 export { Avatar, AvatarImage, AvatarFallback } from "./components/Avatar";
 
 export { cn } from "./lib/utils";
