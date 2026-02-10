@@ -7,3 +7,5 @@ export type {
   CreateAccountDto,
   UpdateAccountDto,
 } from "./types";
+
+export type { Transaction, DashboardSummary } from "./types";

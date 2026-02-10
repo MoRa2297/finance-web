@@ -1,16 +1,13 @@
 "use client";
 
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cn } from "../../lib/utils";
-
-type AvatarProps = React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>;
-type AvatarImageProps = React.ComponentPropsWithoutRef<
-  typeof AvatarPrimitive.Image
->;
-type AvatarFallbackProps = React.ComponentPropsWithoutRef<
-  typeof AvatarPrimitive.Fallback
->;
+import type {
+  AvatarFallbackProps,
+  AvatarImageProps,
+  AvatarProps,
+} from "./Avatar.types";
 
 export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
   ({ className, ...rest }, ref) => (

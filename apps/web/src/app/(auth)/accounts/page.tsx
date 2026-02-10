@@ -1,28 +1,7 @@
+import Link from "next/link";
 import { Card, CardContent, Badge, Button } from "@finance/ui";
-
-const mockAccounts = [
-  {
-    id: "1",
-    name: "Main Checking",
-    type: "checking",
-    balance: 8450.0,
-    currency: "EUR",
-  },
-  {
-    id: "2",
-    name: "Savings",
-    type: "savings",
-    balance: 3200.0,
-    currency: "EUR",
-  },
-  {
-    id: "3",
-    name: "Credit Card",
-    type: "credit",
-    balance: -800.0,
-    currency: "EUR",
-  },
-];
+import { formatCurrency } from "@finance/utils";
+import { getAccounts } from "@/lib/data";
 
 const typeColors = {
   checking: "default",
@@ -31,26 +10,29 @@ const typeColors = {
   investment: "neutral",
 } as const;
 
-export default function AccountsPage() {
+export default async function AccountsPage() {
+  const accounts = await getAccounts();
+
+  const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
+
   return (
     <div>
       <div className="mb-8 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white">Accounts</h1>
-          <p className="mt-1 text-gray-400">Manage your bank accounts</p>
+          <p className="mt-1 text-gray-400">
+            {accounts.length} accounts · Total: {formatCurrency(totalBalance)}
+          </p>
         </div>
         <Button>Add Account</Button>
       </div>
 
       <div className="flex flex-col gap-4">
-        {mockAccounts.map((account) => (
-          <Card
-            key={account.id}
-            className="transition-colors hover:border-gray-700"
-          >
-            <CardContent>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
+        {accounts.map((account) => (
+          <Link key={account.id} href={`/accounts/${account.id}`}>
+            <Card className="transition-colors hover:border-gray-700">
+              <CardContent>
+                <div className="flex items-center justify-between">
                   <div>
                     <p className="font-medium text-white">{account.name}</p>
                     <Badge
@@ -62,18 +44,15 @@ export default function AccountsPage() {
                       {account.type}
                     </Badge>
                   </div>
+                  <p
+                    className={`text-xl font-bold ${account.balance >= 0 ? "text-white" : "text-red-400"}`}
+                  >
+                    {formatCurrency(account.balance)}
+                  </p>
                 </div>
-                <p
-                  className={`text-xl font-bold ${account.balance >= 0 ? "text-white" : "text-red-400"}`}
-                >
-                  €
-                  {Math.abs(account.balance).toLocaleString("it-IT", {
-                    minimumFractionDigits: 2,
-                  })}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
